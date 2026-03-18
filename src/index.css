@@ -1,0 +1,162 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;0,9..40,800;1,9..40,300&family=Sora:wght@300;400;500;600;700;800&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 0 0% 100%;
+    --foreground: 220 25% 15%;
+    --card: 0 0% 100%;
+    --card-foreground: 220 25% 15%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 220 25% 15%;
+    --primary: 210 100% 50%;
+    --primary-foreground: 0 0% 100%;
+    --secondary: 210 20% 96%;
+    --secondary-foreground: 220 25% 15%;
+    --muted: 210 20% 96%;
+    --muted-foreground: 220 10% 45%;
+    --accent: 175 70% 45%;
+    --accent-foreground: 0 0% 100%;
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 0 0% 98%;
+    --border: 210 20% 90%;
+    --input: 210 20% 90%;
+    --ring: 210 100% 50%;
+    --radius: 0.75rem;
+
+    /* Nugentrix Brand Colors */
+    --nugen-blue: #1a6ef5;
+    --nugen-teal: #00c6a7;
+    --nugen-dark: #0e1b2e;
+    --nugen-gray: #64748B;
+    --nugen-light: #F1F8FF;
+    --nugen-bg: #f7faff;
+    --nugen-gradient: linear-gradient(135deg, #1a6ef5 0%, #00c6a7 100%);
+  }
+}
+
+@layer base {
+  * { @apply border-border; }
+  html { scroll-behavior: smooth; }
+  body {
+    background: #ffffff;
+    color: #0e1b2e;
+    font-family: 'DM Sans', sans-serif;
+    overflow-x: hidden;
+    -webkit-font-smoothing: antialiased;
+  }
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Sora', sans-serif;
+    font-weight: 700;
+    color: #0e1b2e;
+  }
+}
+
+@layer components {
+  /* Gradient Text */
+  .gradient-text {
+    background: linear-gradient(135deg, #1a6ef5 0%, #00c6a7 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  /* Gradient Background */
+  .gradient-bg {
+    background: linear-gradient(135deg, #1a6ef5 0%, #00c6a7 100%);
+  }
+
+  /* Glass Card */
+  .glass-card {
+    background: rgba(255, 255, 255, 0.92);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border: 1px solid rgba(255, 255, 255, 0.6);
+    box-shadow: 0 8px 32px rgba(26, 110, 245, 0.1), 0 2px 8px rgba(0,0,0,0.06);
+  }
+
+  /* Primary Button */
+  .btn-primary {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.875rem 2rem;
+    border-radius: 12px;
+    font-family: 'DM Sans', sans-serif;
+    font-weight: 600;
+    font-size: 0.95rem;
+    color: white;
+    background: linear-gradient(135deg, #1a6ef5 0%, #00c6a7 100%);
+    box-shadow: 0 4px 20px rgba(26, 110, 245, 0.35);
+    transition: all 0.3s ease;
+    border: none;
+    cursor: pointer;
+    text-decoration: none;
+  }
+  .btn-primary:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 30px rgba(26, 110, 245, 0.45);
+  }
+
+  /* Section Padding */
+  .section-padding { @apply py-20 lg:py-32; }
+
+  /* Container */
+  .container-modern { @apply max-w-7xl mx-auto px-4 sm:px-6 lg:px-8; }
+
+  /* Card Hover */
+  .card-hover { @apply transition-all duration-300; }
+  .card-hover:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 20px 60px rgba(26, 110, 245, 0.15);
+  }
+
+  /* Grid Pattern */
+  .grid-pattern {
+    background-image:
+      linear-gradient(rgba(26, 110, 245, 0.04) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(26, 110, 245, 0.04) 1px, transparent 1px);
+    background-size: 60px 60px;
+  }
+
+  /* Dot Pattern */
+  .dot-pattern {
+    background-image: radial-gradient(rgba(26, 110, 245, 0.12) 1px, transparent 1px);
+    background-size: 24px 24px;
+  }
+
+  /* Float */
+  .float { animation: float 6s ease-in-out infinite; }
+  @keyframes float {
+    0%, 100% { transform: translateY(0px); }
+    50% { transform: translateY(-14px); }
+  }
+
+  /* Gradient Border */
+  .gradient-border {
+    position: relative;
+    background: white;
+    border-radius: 1rem;
+  }
+  .gradient-border::before {
+    content: '';
+    position: absolute;
+    inset: -2px;
+    border-radius: 1.1rem;
+    background: linear-gradient(135deg, #1a6ef5, #00c6a7, #1a6ef5);
+    background-size: 200% 200%;
+    animation: gradient-shift 3s ease infinite;
+    z-index: -1;
+  }
+  @keyframes gradient-shift {
+    0%, 100% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+  }
+}
+
+@layer utilities {
+  .text-balance { text-wrap: balance; }
+}

@@ -1,0 +1,192 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    /* Nugentrix Modern Tech Theme - Blue/Teal Gradient */
+    --background: 0 0% 100%;
+    --foreground: 220 25% 15%;
+    --card: 0 0% 100%;
+    --card-foreground: 220 25% 15%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 220 25% 15%;
+    --primary: 210 100% 50%;
+    --primary-foreground: 0 0% 100%;
+    --secondary: 210 20% 96%;
+    --secondary-foreground: 220 25% 15%;
+    --muted: 210 20% 96%;
+    --muted-foreground: 220 10% 45%;
+    --accent: 175 70% 45%;
+    --accent-foreground: 0 0% 100%;
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 0 0% 98%;
+    --border: 210 20% 90%;
+    --input: 210 20% 90%;
+    --ring: 210 100% 50%;
+    --radius: 0.75rem;
+    
+    /* Custom Nugentrix Colors */
+    --nugen-blue: #0066FF;
+    --nugen-teal: #00D4AA;
+    --nugen-dark: #0A1628;
+    --nugen-gray: #64748B;
+    --nugen-light: #F1F5F9;
+    --nugen-gradient: linear-gradient(135deg, #0066FF 0%, #00D4AA 100%);
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  
+  html {
+    scroll-behavior: smooth;
+  }
+  
+  body {
+    @apply bg-background text-foreground antialiased;
+    font-family: 'Inter', 'DM Sans', sans-serif;
+    overflow-x: hidden;
+  }
+  
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Inter', 'Manrope', sans-serif;
+    font-weight: 700;
+  }
+}
+
+@layer components {
+  /* Gradient Text */
+  .gradient-text {
+    background: linear-gradient(135deg, #0066FF 0%, #00D4AA 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+  
+  /* Gradient Background */
+  .gradient-bg {
+    background: linear-gradient(135deg, #0066FF 0%, #00D4AA 100%);
+  }
+  
+  /* Glass Card Effect */
+  .glass-card {
+    background: rgba(255, 255, 255, 0.8);
+    backdrop-filter: blur(20px);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    box-shadow: 0 8px 32px rgba(0, 102, 255, 0.1);
+  }
+  
+  /* Glass Card Dark */
+  .glass-card-dark {
+    background: rgba(10, 22, 40, 0.8);
+    backdrop-filter: blur(20px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+  }
+  
+  /* Modern Button */
+  .btn-primary {
+    @apply px-8 py-4 rounded-xl font-semibold text-white transition-all duration-300;
+    background: linear-gradient(135deg, #0066FF 0%, #00D4AA 100%);
+    box-shadow: 0 4px 20px rgba(0, 102, 255, 0.3);
+  }
+  
+  .btn-primary:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 30px rgba(0, 102, 255, 0.4);
+  }
+  
+  /* Section Padding */
+  .section-padding {
+    @apply py-20 lg:py-32;
+  }
+  
+  /* Container */
+  .container-modern {
+    @apply max-w-7xl mx-auto px-4 sm:px-6 lg:px-8;
+  }
+  
+  /* Card Hover Effect */
+  .card-hover {
+    @apply transition-all duration-300;
+  }
+  
+  .card-hover:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 20px 60px rgba(0, 102, 255, 0.15);
+  }
+  
+  /* Glow Effect */
+  .glow-blue {
+    box-shadow: 0 0 60px rgba(0, 102, 255, 0.3);
+  }
+  
+  .glow-teal {
+    box-shadow: 0 0 60px rgba(0, 212, 170, 0.3);
+  }
+  
+  /* Animated Gradient Border */
+  .gradient-border {
+    position: relative;
+    background: white;
+    border-radius: 1rem;
+  }
+  
+  .gradient-border::before {
+    content: '';
+    position: absolute;
+    inset: -2px;
+    border-radius: 1.1rem;
+    background: linear-gradient(135deg, #0066FF, #00D4AA, #0066FF);
+    background-size: 200% 200%;
+    animation: gradient-shift 3s ease infinite;
+    z-index: -1;
+  }
+  
+  @keyframes gradient-shift {
+    0%, 100% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+  }
+  
+  /* Floating Animation */
+  .float {
+    animation: float 6s ease-in-out infinite;
+  }
+  
+  @keyframes float {
+    0%, 100% { transform: translateY(0px); }
+    50% { transform: translateY(-20px); }
+  }
+  
+  /* Pulse Glow */
+  .pulse-glow {
+    animation: pulse-glow 2s ease-in-out infinite;
+  }
+  
+  @keyframes pulse-glow {
+    0%, 100% { box-shadow: 0 0 20px rgba(0, 102, 255, 0.3); }
+    50% { box-shadow: 0 0 40px rgba(0, 102, 255, 0.6); }
+  }
+  
+  /* Grid Pattern Background */
+  .grid-pattern {
+    background-image: 
+      linear-gradient(rgba(0, 102, 255, 0.03) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(0, 102, 255, 0.03) 1px, transparent 1px);
+    background-size: 60px 60px;
+  }
+  
+  /* Dot Pattern */
+  .dot-pattern {
+    background-image: radial-gradient(rgba(0, 102, 255, 0.15) 1px, transparent 1px);
+    background-size: 24px 24px;
+  }
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+}
