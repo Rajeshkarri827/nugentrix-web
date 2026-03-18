@@ -1,74 +1,79 @@
-# AirLens - Portfolio Template
+# Nugentrix — Company Website
 
-A premium single-page portfolio template with a dark forest theme, featuring cinematic scroll animations, parallax effects, and a photography/creative-focused design.
+Official website for **[Nugentrix.com](https://nugentrix.com)** — a premium single-page site with a dark forest theme, cinematic scroll animations, and parallax effects.
 
-## Features
-
-- **Hero Section** - Full-screen parallax layered hero with large background text, cutout model image, and overlay text
-- **Intro Grid** - Split-line mask reveal title with masonry image grid featuring per-image directional clip-path reveals, Ken Burns zoom, and varied-depth parallax
-- **Services** - Two-column layout with animated heading and staggered service cards in a 2x2 grid
-- **Why Choose Me** - Feature cards with clip-path reveal animations, animated stat counters, and a wide landscape image with center-expand reveal
-- **Featured Projects** - Alternating layout project cards with clip-path reveals, parallax images, viewfinder overlays, and staggered text animations
-- **Testimonials** - Auto-playing Swiper carousel with hover color-invert effect and gradient fade overlays
-- **FAQ** - Radix UI accordion with staggered reveal animations and CTA button
-- **Footer** - Massive SVG logo text, three-column layout with contact info, navigation, and social links
+---
 
 ## Tech Stack
 
 - **React 19** + **TypeScript**
-- **Vite** - Build tool
-- **Tailwind CSS 3** - Utility-first styling
-- **GSAP** + **ScrollTrigger** - Scroll-driven animations and parallax
-- **Lenis** - Smooth scroll
-- **Swiper** - Testimonials carousel
-- **Radix UI** - Accessible accordion component
-- **Lucide React** - Icon library
+- **Vite**
+- **Tailwind CSS 3**
+- **GSAP + ScrollTrigger**
+- **Lenis** (smooth scroll)
+- **Swiper** (carousel)
+- **Radix UI** (accordion)
+- **Lucide React** (icons)
 
-## Quick Start
+---
+
+## Getting Started
 
 ```bash
 npm install
 npm run dev
 ```
 
+---
+
 ## Configuration
 
-All content is managed through `src/config.ts`. Each section has its own typed configuration object with empty placeholder values. Fill in the config objects to populate the site.
+All site content lives in `src/config.ts`. Each section has its own typed config object — fill in the values to populate the site.
 
-Each section has a null check - if the config is empty (no title and no array items), the section will not render.
+> If a config object has no title and no items, that section will be hidden automatically.
 
-### Config Objects
+| Config | Controls |
+|---|---|
+| `siteConfig` | Title, description, language |
+| `heroConfig` | Background text, hero image, brand name, nav links |
+| `introGridConfig` | Title lines, portfolio images, accent text |
+| `featuredProjectsConfig` | Project cards with images and descriptions |
+| `servicesConfig` | Service items with icons |
+| `whyChooseMeConfig` | Feature cards, stats, landscape image |
+| `testimonialsConfig` | Quotes and author info |
+| `faqConfig` | FAQ items, CTA button |
+| `footerConfig` | Logo, contact info, nav, social links, copyright |
 
-- `siteConfig` - Site title, description, language
-- `heroConfig` - Background text, hero image, overlay text, brand name, navigation links
-- `introGridConfig` - Title lines, description, portfolio images, accent text
-- `featuredProjectsConfig` - Section titles, projects with images/descriptions
-- `servicesConfig` - Section titles, service items with icons
-- `whyChooseMeConfig` - Feature cards, stats, wide landscape image
-- `testimonialsConfig` - Testimonial cards with quotes and author info
-- `faqConfig` - FAQ items, CTA button
-- `footerConfig` - Logo, contact info, navigation, social links, copyright
+---
 
-## Required Images
+## Images
 
-Place images in the `public/` directory:
+Place all images in the `public/` directory.
 
-- **Hero**: A cutout/transparent PNG for the hero model image (recommended: ~500px wide)
-- **Portfolio**: 5 images for the masonry grid (various aspect ratios)
-- **Featured Projects**: 1 image per project (4:3 aspect ratio recommended)
-- **Why Choose Me**: 2 portrait images (3:4 aspect ratio), 1 wide landscape (21:9 or 3:1 aspect ratio)
-- **Testimonials**: 1 avatar image per testimonial (square, small)
+| Location | Spec |
+|---|---|
+| Hero | Transparent/cutout PNG (~500px wide) |
+| Portfolio grid | 5 images, any aspect ratio |
+| Featured projects | 1 per project (4:3 recommended) |
+| Why Choose Me | 2 portrait (3:4) + 1 landscape (21:9 or 3:1) |
+| Testimonials | 1 small square avatar per entry |
+
+---
 
 ## Design
 
-- **Color Theme**: Deep forest charcoal (#0d1310) with off-white (#f4f4f4) alternating sections
-- **Typography**: Manrope (headings), Playfair Display (italic accents), DM Sans (body)
-- **Animations**: GSAP ScrollTrigger with clip-path reveals, parallax, scale effects, and staggered entrances
-- **Layout**: Alternating dark/light sections, max-width 7xl container
+- **Colors:** Deep forest charcoal `#0d1310` / off-white `#f4f4f4` alternating sections
+- **Fonts:** Manrope · Playfair Display (italic accents) · DM Sans
+- **Animations:** GSAP ScrollTrigger — clip-path reveals, parallax, scale, staggered entrances
+- **Icons:** `iconName` in config maps to Lucide components — `Camera`, `Diamond`, `Users`, `Sparkles`, `Instagram`, `Twitter`, `Linkedin`, `Mail`
 
-## Notes
+---
 
-- All animations use GSAP with ScrollTrigger for scroll-driven effects
-- Lenis provides smooth scroll behavior connected to GSAP ticker
-- The Swiper carousel auto-plays with configurable breakpoints
-- Service and footer icons use a string-to-component map (iconName field maps to Lucide icon components: Camera, Diamond, Users, Sparkles, Instagram, Twitter, Linkedin, Mail)
+## License
+
+Copyright © 2025 Nugentrix. All rights reserved.
+
+This repository is publicly visible for portfolio and reference purposes only.
+The source code, design, and assets in this project are proprietary and may not
+be copied, modified, distributed, or used — in whole or in part — without
+explicit written permission from Nugentrix.
